@@ -40,10 +40,11 @@
       "hue": 34
     },
     {
+      "$hue": "Amber, not the 322 it started on: weifeng is already 322, and these two are the only tracks on the deployed site, so identical hues made skipping between them do nothing on screen. 34 is the guitar in the portrait, and it is the colour the rig lost when pozhen came out of the set.",
       "id": "shiming",
       "file": "audio/shiming.mp3",
       "album": "singles",
-      "hue": 322
+      "hue": 34
     },
     {
       "id": "tiankong",

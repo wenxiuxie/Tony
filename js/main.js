@@ -1244,12 +1244,25 @@ class HeroViz {
     }
     ctx.globalCompositeOperation = 'lighter';
 
+    /* Overall strength of the curtains, and the one number to turn if
+       they are too much or too little. It ran at 1 and read as
+       overdone: the sheets climbed most of the way up the frame and
+       the green one ended up competing with his face for attention.
+       Everything below — height, opacity and the bright edge — is
+       multiplied by this, so the shape and the timing stay exactly as
+       tuned and only the amount changes. */
+    const GAIN = 0.66;
+
     /* Four sheets: a green curtain (the aurora people actually picture),
        the room's cool tube, the song as a thinner ribbon, and a violet
        edge. Amber is kept off this canvas — against the orange portrait
-       it read as fire, not as polar light. */
+       it read as fire, not as polar light.
+
+       The green one is additionally down from 0.28: it is the only hue
+       here outside the site's own family, so at equal alpha it reads
+       louder than the other three put together. */
     const layers = [
-      { hue: 148,          y: 0.94, amp: 0.62, spd: 0.18, ph: 0,   a: 0.28 },
+      { hue: 148,          y: 0.94, amp: 0.62, spd: 0.18, ph: 0,   a: 0.22 },
       { hue: VIZ.cool,     y: 0.93, amp: 0.52, spd: 0.27, ph: 1.6, a: 0.22 },
       { hue: VIZ.base,     y: 0.95, amp: 0.40, spd: 0.21, ph: 2.4, a: 0.14 },
       { hue: 280,          y: 0.96, amp: 0.34, spd: 0.33, ph: 0.7, a: 0.16 }
@@ -1267,7 +1280,7 @@ class HeroViz {
                    + Math.sin(u * 4.4 - this.t * layer.spd * 0.55) * 0.38
                    + Math.sin(u * 22 + layer.ph) * 0.07;
         const rise = (0.18 + 0.72 * energy * (0.35 + 0.65 * this.mix) + 0.14 * this.flash)
-                   * layer.amp * (0.78 + fold);
+                   * layer.amp * (0.78 + fold) * GAIN;
         pts[i] = { x: u * w, y: h * layer.y - rise * h };
       }
 
@@ -1281,7 +1294,7 @@ class HeroViz {
       ctx.lineTo(w, h);
       ctx.closePath();
 
-      const alpha = layer.a * (0.35 + 0.65 * this.mix) + 0.12 * this.flash;
+      const alpha = (layer.a * (0.35 + 0.65 * this.mix) + 0.12 * this.flash) * GAIN;
       const g = ctx.createLinearGradient(0, h * 0.12, 0, h);
       g.addColorStop(0,    'hsla(' + layer.hue.toFixed(1) + ',95%,72%,0)');
       g.addColorStop(0.28, 'hsla(' + layer.hue.toFixed(1) + ',100%,64%,' + alpha.toFixed(3) + ')');
@@ -1295,14 +1308,14 @@ class HeroViz {
       ctx.lineWidth = 1.4;
       ctx.lineJoin = 'round';
       ctx.strokeStyle = 'hsla(' + VIZ.base.toFixed(1) + ',100%,78%,' +
-                        (0.18 + 0.45 * this.mix + 0.3 * this.flash).toFixed(3) + ')';
+                        ((0.18 + 0.45 * this.mix + 0.3 * this.flash) * GAIN).toFixed(3) + ')';
       ctx.beginPath();
       for (let i = 0; i <= steps; i++) {
         const u = i / steps;
         const bi = Math.min(this.n - 1, Math.round(u * (this.n - 1)));
         const energy = this.ups[bi] / this.upMax;
         const fold = Math.sin(u * 6.2 + this.t * 0.22) * 0.22;
-        const y = h * 0.88 - (0.18 + 0.72 * energy + 0.14 * this.flash) * 0.72 * (0.8 + fold) * h;
+        const y = h * 0.88 - (0.18 + 0.72 * energy + 0.14 * this.flash) * 0.72 * (0.8 + fold) * GAIN * h;
         if (i === 0) ctx.moveTo(u * w, y);
         else ctx.lineTo(u * w, y);
       }
