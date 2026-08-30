@@ -300,9 +300,22 @@ class AudioEngine {
    a timer.
    --------------------------------------------------------- */
 const VIZ = {
-  base:   322,      // bass end, degrees — rose/magenta
-  target: 322,      // per-track gel; AlbumMood writes this on skip
-  SPREAD: -62,      // treble end sits this far round the wheel — violet
+  base:   40,       // bass end, degrees — amber/gold
+  target: 40,       // per-track gel; AlbumMood writes this on skip
+  /* Treble end, this far round the wheel. It was -62, which was right
+     while the base was magenta: 322 -> 260 runs rose to violet, a
+     continuous cool arc. The moment the base moved into the warms that
+     same -62 dragged the spectrum ACROSS pure red — 40 -> -22 is 338 —
+     and orange, red and magenta on screen at once is the single
+     cheapest thing stage light can look like.
+
+     +26 keeps the whole ramp inside amber-to-gold. Narrow on purpose:
+     any wide span from a warm base has to cross either the greens or
+     the reds to get anywhere, so the cool half of this picture comes
+     from RING and `cool` below as separate fixtures — the way a real
+     rig does it — rather than from stretching one gradient until it
+     lands somewhere ugly. */
+  SPREAD: 26,
   phase:  0,
 
   /* Ease the gel toward the current track. Shortest path around the
@@ -335,18 +348,27 @@ const VIZ = {
      up the warmest object in the frame. Embers, the floor bloom and the
      low followspot are gelled to it. */
   AMBER: 34,
-  warm (l, a) { return 'hsla(' + this.AMBER + ',92%,' + l + '%,' + a + ')'; },
+  warm (l, a) { return 'hsla(' + this.AMBER + ',72%,' + l + '%,' + a + ')'; },
 
   /* The cool tube of the neon sign, kept opposite the warm one rather
-     than pinned to a colour: as the wash drifts 292-322, this drifts
-     164-194, so the two are always complementary and the sign never
-     collapses into one hue. 194 is, again, the light in the photograph. */
-  get cool () { return (this.base + 232) % 360; },
+     than pinned to a colour, so the two are always complementary and
+     the sign never collapses into one hue. The offset was re-derived
+     when the base went warm: +232 off the old magenta 322 landed on
+     194, the cool light in the photograph, and +160 off the new amber
+     base lands on the same 194-208. The number changed so that the
+     colour would not. */
+  get cool () { return (this.base + 160) % 360; },
 
-  /* f is 0..1 from bass to treble; l lightness, a alpha. */
+  /* f is 0..1 from bass to treble; l lightness, a alpha.
+
+     76%, not the 100% this ran at. Full saturation is the tell that
+     separates a nightclub from a film set: a real lamp puts out a broad
+     spectrum and reads as colour-TINTED white, where 100% reads as gel
+     over a bare bulb. At these alphas the drop costs nothing legible
+     and takes most of the cheapness out of the frame. */
   at (f, l, a) {
     return 'hsla(' + (this.base + f * this.SPREAD).toFixed(1) +
-           ',100%,' + l + '%,' + a + ')';
+           ',76%,' + l + '%,' + a + ')';
   }
 };
 
@@ -1025,11 +1047,16 @@ class HeroViz {
        trick in stage lighting and it is what gives the screen depth
        rather than just brightness. The gradient crosses from amber
        through rose so there is no seam between the two systems. */
-    const rad = h * (0.32 + 0.5 * bass * this.mix + 0.3 * this.flash);
+    /* Pulled in and turned down — it was h*0.32 rising to 0.62 of the
+       screen on a kick, which is not a footlight any more, it is a
+       sunset. With the aurora above it gone cold this is the only warm
+       thing at the bottom of the frame, and it only has to say "the
+       floor is lit", not fill the lower third. */
+    const rad = h * (0.24 + 0.34 * bass * this.mix + 0.20 * this.flash);
     const gr = ctx.createRadialGradient(w * 0.5, h, 0, w * 0.5, h, Math.max(1, rad));
-    gr.addColorStop(0,    VIZ.warm(64, (0.14 + 0.36 * this.mix + 0.42 * this.flash).toFixed(3)));
-    gr.addColorStop(0.34, VIZ.warm(52, (0.08 + 0.18 * this.mix).toFixed(3)));
-    gr.addColorStop(0.68, VIZ.at(0.35, 52, (0.06 + 0.12 * this.mix).toFixed(3)));
+    gr.addColorStop(0,    VIZ.warm(62, (0.09 + 0.22 * this.mix + 0.26 * this.flash).toFixed(3)));
+    gr.addColorStop(0.34, VIZ.warm(50, (0.05 + 0.11 * this.mix).toFixed(3)));
+    gr.addColorStop(0.68, VIZ.at(0.35, 50, (0.035 + 0.07 * this.mix).toFixed(3)));
     gr.addColorStop(1,    'hsla(0,0%,0%,0)');
     ctx.fillStyle = gr;
     ctx.fillRect(0, 0, w, h);
@@ -1251,21 +1278,25 @@ class HeroViz {
        Everything below — height, opacity and the bright edge — is
        multiplied by this, so the shape and the timing stay exactly as
        tuned and only the amount changes. */
-    const GAIN = 0.66;
+    const GAIN = 0.52;
 
-    /* Four sheets: a green curtain (the aurora people actually picture),
-       the room's cool tube, the song as a thinner ribbon, and a violet
-       edge. Amber is kept off this canvas — against the orange portrait
-       it read as fire, not as polar light.
+    /* Four sheets, and they are COLD now — three cool and one warm.
 
-       The green one is additionally down from 0.28: it is the only hue
-       here outside the site's own family, so at equal alpha it reads
-       louder than the other three put together. */
+       They used to be a green curtain and a violet edge, which was the
+       aurora people picture. Against a warm rig that reading was wrong
+       twice: green and violet are both far outside the palette upstairs
+       so they fought it, and warm light at the bottom of the frame
+       piles onto the footlights already burning there — which is what
+       made the lower third look heavy and, on screen, on fire.
+
+       Cold at the floor and warm in the air is also how the eye reads
+       depth: cool recedes, warm advances. One sheet is left on the base
+       hue so the floor is not a separate picture from the room. */
     const layers = [
-      { hue: 148,          y: 0.94, amp: 0.62, spd: 0.18, ph: 0,   a: 0.22 },
-      { hue: VIZ.cool,     y: 0.93, amp: 0.52, spd: 0.27, ph: 1.6, a: 0.22 },
-      { hue: VIZ.base,     y: 0.95, amp: 0.40, spd: 0.21, ph: 2.4, a: 0.14 },
-      { hue: 280,          y: 0.96, amp: 0.34, spd: 0.33, ph: 0.7, a: 0.16 }
+      { hue: 200,          y: 0.94, amp: 0.62, spd: 0.18, ph: 0,   a: 0.20 },
+      { hue: VIZ.cool,     y: 0.93, amp: 0.52, spd: 0.27, ph: 1.6, a: 0.20 },
+      { hue: VIZ.base,     y: 0.95, amp: 0.40, spd: 0.21, ph: 2.4, a: 0.13 },
+      { hue: 186,          y: 0.96, amp: 0.34, spd: 0.33, ph: 0.7, a: 0.14 }
     ];
 
     const steps = 48;
@@ -1296,10 +1327,13 @@ class HeroViz {
 
       const alpha = (layer.a * (0.35 + 0.65 * this.mix) + 0.12 * this.flash) * GAIN;
       const g = ctx.createLinearGradient(0, h * 0.12, 0, h);
-      g.addColorStop(0,    'hsla(' + layer.hue.toFixed(1) + ',95%,72%,0)');
-      g.addColorStop(0.28, 'hsla(' + layer.hue.toFixed(1) + ',100%,64%,' + alpha.toFixed(3) + ')');
-      g.addColorStop(0.62, 'hsla(' + layer.hue.toFixed(1) + ',90%,48%,' + (alpha * 0.45).toFixed(3) + ')');
-      g.addColorStop(1,    'hsla(' + layer.hue.toFixed(1) + ',80%,40%,0)');
+      /* Saturation down from 95/100/90/80 for the same reason VIZ.at
+         came off 100: these are sheets of light in air, and air does
+         not carry a pure hue. */
+      g.addColorStop(0,    'hsla(' + layer.hue.toFixed(1) + ',68%,72%,0)');
+      g.addColorStop(0.28, 'hsla(' + layer.hue.toFixed(1) + ',74%,64%,' + alpha.toFixed(3) + ')');
+      g.addColorStop(0.62, 'hsla(' + layer.hue.toFixed(1) + ',62%,48%,' + (alpha * 0.45).toFixed(3) + ')');
+      g.addColorStop(1,    'hsla(' + layer.hue.toFixed(1) + ',56%,40%,0)');
       ctx.fillStyle = g;
       ctx.fill();
     }

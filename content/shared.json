@@ -22,10 +22,11 @@
   "albumMapProvisional": true,
   "tracks": [
     {
+      "$hue": "Amber, not the 322 magenta it shipped on. The magenta was the site identity colour and it was the wrong thing to point at a photograph of a man holding a spruce-topped guitar under warm light -- it fought the picture instead of lighting it.",
       "id": "weifeng",
       "file": "audio/weifeng.mp3",
       "album": "overthinking",
-      "hue": 322
+      "hue": 34
     },
     {
       "id": "bluesky",
@@ -40,11 +41,11 @@
       "hue": 34
     },
     {
-      "$hue": "Amber, not the 322 it started on: weifeng is already 322, and these two are the only tracks on the deployed site, so identical hues made skipping between them do nothing on screen. 34 is the guitar in the portrait, and it is the colour the rig lost when pozhen came out of the set.",
+      "$hue": "Gold, a shade up the wheel from weifeng's 34. Both tracks are warm now, so the skip between them is a small temperature move rather than a colour change -- which is the whole point: at 322 vs 34 it was a jump-cut, and both being 34 would have been nothing at all.",
       "id": "shiming",
       "file": "audio/shiming.mp3",
       "album": "singles",
-      "hue": 34
+      "hue": 48
     },
     {
       "id": "tiankong",

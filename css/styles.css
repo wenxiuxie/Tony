@@ -900,7 +900,9 @@ img{ display:block; max-width:100%; }
   width:100%; height:min(28vh, 240px);
   pointer-events:none;
   mix-blend-mode:screen;
-  filter:blur(9px) saturate(1.25);
+  /* 1.25 was pushing already-saturated sheets further; the canvas paints
+     its own colour now and does not need help. */
+  filter:blur(9px) saturate(1.05);
 }
 .hero.is-graded .hero__wave{
   filter:blur(9px) saturate(calc(1.25 * var(--chroma,1)));
