@@ -16,11 +16,14 @@
 ink_raw.png
 ink_preview.png
 
-# Three tracks are committed, not the ten that sit here locally: the rest
+# Two tracks are committed, not the ten that sit here locally: the rest
 # are unconfirmed for public release, and at 25MB they were most of the
-# repo. These three are one per record with hues far enough apart to show
-# the lighting change - weifeng (Overthinking, 322 magenta), pozhen
-# (Saturn, 34 amber), little_star (singles, 210 ice). 6.7MB together.
+# repo. weifeng (Overthinking, hue 322 magenta) and little_star (singles,
+# hue 210 ice) - 5.2MB together, and far enough apart on the wheel that
+# skipping between them visibly regrades the hero.
+#
+# Saturn Diary has no track here any more, so the lighting never goes
+# amber on the deployed site. Add pozhen back below if that matters.
 #
 # Nothing else needs to change to add or drop one: AudioEngine._init()
 # HEAD-probes every entry in the playlist and keeps the ones that answer,
@@ -28,7 +31,6 @@ ink_preview.png
 /audio/*
 !/audio/README.md
 !/audio/weifeng.mp3
-!/audio/pozhen.mp3
 !/audio/little_star_music.mp3
 
 # OS / editor
