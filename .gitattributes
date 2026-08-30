@@ -1,0 +1,18 @@
+# normalise text to LF in the repo, native in the working copy
+* text=auto
+
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.svg   text eol=lf
+*.py    text eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+
+*.webp  binary
+*.woff2 binary
+*.mp3   binary
+*.m4a   binary
+*.ogg   binary
+*.pdf   binary

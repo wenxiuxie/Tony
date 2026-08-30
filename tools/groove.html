@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>沟槽烘焙 · Tony D</title>
+<!--
+  Bakes each track in content/shared.json down to a 3000-point loudness
+  envelope and writes content/groove.json through the dev server.
+
+      python tools/devserver.py 5599
+      http://127.0.0.1:5599/tools/groove.html      →  点「开始烘焙」
+
+  WHY THIS IS A WEB PAGE AND NOT A PYTHON SCRIPT
+  There is no ffmpeg on this machine and no Python MP3 decoder installed,
+  so nothing in tools/ can read an MP3. The browser can — and it is the
+  same decoder that will play these files on the site, so the envelope is
+  guaranteed to line up with what a visitor actually hears.
+
+  Run it again whenever audio/ changes. Nothing here ships: the site only
+  ever reads the JSON this produces.
+-->
+<style>
+  :root{ --bone:#EDE6DC; --ink:#0B0A0C; --line:rgba(237,230,220,.16); }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ background:var(--ink); color:var(--bone); min-height:100vh; padding:48px 32px;
+        font:14px/1.7 ui-monospace,"SF Mono",Consolas,"Microsoft YaHei",monospace; }
+  .wrap{ max-width:760px; margin:0 auto; }
+  h1{ font-size:15px; font-weight:600; letter-spacing:.16em; margin-bottom:6px; }
+  .sub{ color:#8E8880; font-size:12px; margin-bottom:28px; }
+  button{ font:inherit; font-size:12.5px; letter-spacing:.1em; padding:11px 26px;
+          border-radius:100px; border:1px solid var(--line); cursor:pointer;
+          background:var(--bone); color:var(--ink); font-weight:600; }
+  button:disabled{ background:transparent; color:#6C6660; cursor:default; }
+  .rows{ margin-top:28px; border-top:1px solid var(--line); }
+  .row{ display:flex; align-items:center; gap:14px; padding:9px 2px;
+        border-bottom:1px solid var(--line); font-size:12.5px; }
+  .row b{ font-weight:400; flex:1; }
+  .row i{ font-style:normal; color:#8E8880; font-size:11.5px; }
+  .row .dot{ width:7px; height:7px; border-radius:50%; background:#3A3540; flex:none; }
+  .row.go   .dot{ background:#D4C4A0; }
+  .row.ok   .dot{ background:#5FBF7F; }
+  .row.bad  .dot{ background:#E05252; }
+  .row.bad  i{ color:#E05252; }
+  .done{ margin-top:24px; font-size:12.5px; color:#5FBF7F; }
+  .done.bad{ color:#E05252; }
+  canvas{ display:block; width:100%; height:54px; margin-top:6px; border-radius:3px;
+          background:rgba(237,230,220,.04); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>沟槽烘焙</h1>
+  <p class="sub">把 content/shared.json 里每首曲子解码成 3000 点响度包络，写入 content/groove.json。<br>
+     只在本地跑，产物是静态数据；访客端不会解码任何音频。</p>
+  <button id="go">开始烘焙</button>
+  <div class="rows" id="rows"></div>
+  <p class="done" id="done" hidden></p>
+</div>
+
+<script>
+/* 3000 points is what the groove is drawn from. One byte each, so a track
+   costs 3000 bytes raw / ~4KB as base64 — ten tracks land around 40KB for
+   the whole site, against the 25MB of audio they describe. */
+const N = 3000;
+
+/* Only loudness is baked. The demo this came from also stored a
+   high-frequency ratio to colour the groove by, but the site already has a
+   per-track hue in the playlist that drives the whole first screen; a
+   second, unrelated colour scale would fight it. So: one array, half the
+   bytes, and the groove comes out in the song's own colour. */
+function envelope (buf) {
+  const ch = buf.getChannelData(0);
+  const per = Math.floor(ch.length / N);
+  const env = new Float64Array(N);
+  let mx = 1e-6;
+
+  for (let i = 0; i < N; i++) {
+    const a = i * per, b = Math.min(ch.length, a + per);
+    let s = 0;
+    for (let j = a; j < b; j++) s += ch[j] * ch[j];
+    env[i] = Math.sqrt(s / Math.max(1, b - a));
+    if (env[i] > mx) mx = env[i];
+  }
+
+  /* 0.62 is the demo's number and it is worth keeping: raw RMS puts almost
+     every quiet passage in the bottom fifth of the range, and a groove that
+     is flat for two minutes tells you nothing. */
+  const out = new Uint8Array(N);
+  for (let i = 0; i < N; i++) out[i] = Math.round(Math.pow(env[i] / mx, 0.62) * 255);
+  return out;
+}
+
+function b64 (bytes) {
+  let s = '';
+  for (let i = 0; i < bytes.length; i += 4096) {
+    s += String.fromCharCode.apply(null, bytes.subarray(i, i + 4096));
+  }
+  return btoa(s);
+}
+
+function preview (cv, bytes) {
+  const w = cv.width = cv.clientWidth * 2, h = cv.height = 108;
+  const c = cv.getContext('2d');
+  c.fillStyle = '#D4C4A0';
+  for (let x = 0; x < w; x++) {
+    const v = bytes[Math.floor(x / w * N)] / 255;
+    c.fillRect(x, h / 2 - v * h / 2, 1, v * h);
+  }
+}
+
+document.getElementById('go').addEventListener('click', async function () {
+  this.disabled = true;
+  const rowsEl = document.getElementById('rows');
+  const doneEl = document.getElementById('done');
+  doneEl.hidden = true;
+
+  const shared = await (await fetch('../content/shared.json')).json();
+  const tracks = shared.tracks || [];
+  const out = {};
+  let bad = 0;
+
+  for (const t of tracks) {
+    const row = document.createElement('div');
+    row.className = 'row go';
+    row.innerHTML = '<span class="dot"></span><b>' + t.id + '</b><i>解码中…</i>';
+    const cv = document.createElement('canvas');
+    rowsEl.appendChild(row);
+
+    try {
+      const res = await fetch('../' + t.file);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const ab = await res.arrayBuffer();
+      // a fresh context per track so the decoded buffer is collectable
+      const buf = await new (window.AudioContext || window.webkitAudioContext)()
+                          .decodeAudioData(ab);
+      const bytes = envelope(buf);
+      out[t.id] = { dur: +buf.duration.toFixed(3), env: b64(bytes) };
+
+      row.className = 'row ok';
+      row.querySelector('i').textContent =
+        buf.duration.toFixed(1) + 's · ' + (ab.byteLength / 1048576).toFixed(1) + 'MB → ' +
+        (b64(bytes).length / 1024).toFixed(1) + 'KB';
+      rowsEl.appendChild(cv);
+      preview(cv, bytes);
+    } catch (e) {
+      bad++;
+      row.className = 'row bad';
+      row.querySelector('i').textContent = String(e.message || e);
+    }
+  }
+
+  if (!Object.keys(out).length) {
+    doneEl.hidden = false; doneEl.className = 'done bad';
+    doneEl.textContent = '一首都没烘出来，没有写文件。';
+    this.disabled = false;
+    return;
+  }
+
+  const res = await fetch('/api/admin/groove', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ v: 1, n: N, tracks: out })
+  });
+  const j = await res.json();
+
+  doneEl.hidden = false;
+  doneEl.className = j.ok ? 'done' : 'done bad';
+  doneEl.textContent = j.ok
+    ? '已写入 content/groove.json（' + j.tracks + ' 首' + (bad ? '，' + bad + ' 首失败' : '') + '），站点已重新构建。'
+    : '写入失败：' + (j.error || res.status);
+  this.disabled = false;
+});
+</script>
+</body>
+</html>

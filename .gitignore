@@ -1,0 +1,39 @@
+# Generated pages — built from content/*.json by build.py.
+# Not committed on purpose: the admin commits JSON only, so a committed copy
+# of these would go stale the moment anyone edits content. Cloudflare Pages
+# renders them at deploy time; run `python build.py` for a local copy.
+/index.html
+/music.html
+/videos.html
+/about.html
+/press.html
+/zh/*.html
+/dist/
+
+# asset pipeline scratch (regenerate with tools/*.py)
+/images/
+/web/
+ink_raw.png
+ink_preview.png
+
+# Three tracks are committed, not the ten that sit here locally: the rest
+# are unconfirmed for public release, and at 25MB they were most of the
+# repo. These three are one per record with hues far enough apart to show
+# the lighting change - weifeng (Overthinking, 322 magenta), pozhen
+# (Saturn, 34 amber), little_star (singles, 210 ice). 6.7MB together.
+#
+# Nothing else needs to change to add or drop one: AudioEngine._init()
+# HEAD-probes every entry in the playlist and keeps the ones that answer,
+# so content/shared.json can keep listing all ten.
+/audio/*
+!/audio/README.md
+!/audio/weifeng.mp3
+!/audio/pozhen.mp3
+!/audio/little_star_music.mp3
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+__pycache__/

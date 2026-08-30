@@ -1,0 +1,510 @@
+{
+  "lang": "zh-Hans",
+  "videoBackend": "bilibili",
+  "assetPrefix": "../",
+  "head": {
+    "title": "Tony D 邓乐潼 — 创作歌手",
+    "description": "Tony D（邓乐潼）——创作歌手、吉他手，环球音乐版权集团（UMPG）签约词曲作者。"
+  },
+  "pages": {
+    "home": {
+      "title": "Tony D 邓乐潼 — 创作歌手",
+      "description": "Tony D（邓乐潼）——创作歌手、吉他手，环球音乐版权集团（UMPG）签约词曲作者。"
+    },
+    "music": {
+      "title": "音乐作品 — Tony D 邓乐潼",
+      "description": "专辑、单曲及收听渠道。全部作品均由 Tony 本人作词、作曲并演唱。"
+    },
+    "videos": {
+      "title": "影像作品 — Tony D 邓乐潼",
+      "description": "Tony D 原创歌曲的官方影像与完整作品列表。"
+    },
+    "about": {
+      "title": "关于 — Tony D 邓乐潼",
+      "description": "Tony D（邓乐潼）——创作歌手、吉他手。个人简介、音乐影响与创作历程。"
+    },
+    "press": {
+      "title": "媒体报道 — Tony D 邓乐潼",
+      "description": "关于 Tony D 的相关报道与乐评。"
+    }
+  },
+  "nav": {
+    "skip": "跳到主要内容",
+    "ariaPrimary": "主导航",
+    "burgerLabel": "打开菜单",
+    "links": [
+      {
+        "href": "music.html",
+        "label": "音乐"
+      },
+      {
+        "href": "videos.html",
+        "label": "影像"
+      },
+      {
+        "href": "about.html",
+        "label": "关于"
+      },
+      {
+        "href": "press.html",
+        "label": "媒体"
+      }
+    ],
+    "cta": {
+      "href": "#contact",
+      "label": "联系"
+    },
+    "altLang": {
+      "href": "../index.html",
+      "label": "EN",
+      "lang": "en"
+    }
+  },
+  "hero": {
+    "imageAlt": "Tony D 抱着木吉他的肖像",
+    "eyebrow": "环球音乐版权集团 &middot; 签约词曲作者",
+    "srTitle": "Tony D — 想太多",
+    "sub": "来自西雅图的创作歌手、吉他手。\n      <em>独立摇滚、英伦摇滚、灵魂乐。</em>\n      第二张专辑《<strong>想太多</strong>》由环球音乐集团全球发行。",
+    "playLabel": "播放",
+    "nextLabel": "下一首",
+    "nowPlaying": "正在播放",
+    "secondary": {
+      "href": "#music",
+      "label": "各平台收听"
+    }
+  },
+  "tracks": {
+    "bluesky": {
+      "title": "bluesky"
+    },
+    "pozhen": {
+      "title": "pozhen"
+    },
+    "shiming": {
+      "title": "shiming"
+    },
+    "tiankong": {
+      "title": "tiankong"
+    },
+    "weifeng": {
+      "title": "weifeng"
+    },
+    "birthday": {
+      "title": "birthday"
+    },
+    "birthday2": {
+      "title": "birthday2"
+    },
+    "heart": {
+      "title": "heart"
+    },
+    "little_star": {
+      "title": "little_star"
+    },
+    "xiaofeng": {
+      "title": "xiaofeng"
+    }
+  },
+  "ticker": {
+    "aria": "重要成绩",
+    "items": [
+      "QQ音乐播放量 <b>200万+</b>",
+      "<b>UMPG</b> 签约词曲作者",
+      "<b>IYMC</b> 2024 冠军",
+      "American Songwriter 2025 <b>冠军</b>",
+      "<b>ISC</b> 决赛入围",
+      "<b>JLSC</b> 周冠军",
+      "网易云播放量 <b>100万+</b>",
+      "<b>IAMA</b> AAA 组第三名"
+    ]
+  },
+  "sections": {
+    "music": {
+      "num": "01",
+      "title": "音乐作品",
+      "desc": "两张专辑。全部作品均由 Tony 本人作词、作曲并演唱。"
+    },
+    "videos": {
+      "num": "02",
+      "title": "影像作品",
+      "desc": "原创歌曲的官方影像。哔哩哔哩版本上线后即可在本页直接播放。",
+      "more": "更多影像"
+    },
+    "about": {
+      "num": "03",
+      "title": "关于",
+      "desc": "从济南到北京，再到纽约与西雅图——以及一路相伴的家庭录音棚。"
+    },
+    "milestones": {
+      "num": "04",
+      "title": "创作历程",
+      "desc": "五年时间，从第一支单曲到全球发行。",
+      "more": "查看更多"
+    },
+    "press": {
+      "num": "05",
+      "title": "媒体报道",
+      "desc": "相关报道与乐评。"
+    },
+    "contact": {
+      "num": "06",
+      "title": "联系方式",
+      "desc": "合作、授权及其他事宜请联系："
+    }
+  },
+  "groove": {
+    "aria": "在当前曲目内跳转",
+    "idle": "沟槽就是这首歌的波形。开始播放后，点唱片上的任意一处就跳到那里。",
+    "hint": "点击跳转"
+  },
+  "notice": {
+    "title": "哔哩哔哩频道筹备中",
+    "body": "下方作品的哔哩哔哩版本尚未上线。目前可前往\n      <a href=\"https://v.douyin.com/i5y5K2vD\" target=\"_blank\" rel=\"noopener\">抖音</a> 或\n      <a href=\"https://weibo.com/6500843556/5171711167171346\" target=\"_blank\" rel=\"noopener\">微博</a>\n      观看；海外用户也可通过下方封面跳转至 YouTube。"
+  },
+  "videoFlag": {
+    "feature": "B 站即将上线 · 现可于 YouTube 观看",
+    "default": "B 站即将上线"
+  },
+  "releases": {
+    "overthinking": {
+      "alt": "《想太多》专辑封面",
+      "badge": "新专",
+      "title": "想太多 <span lang=\"en\">Overthinking</span>",
+      "meta": "专辑 · 2025 · 环球音乐集团",
+      "copy": "共七首作品，六首英文、一首中文。声音更加成熟，编曲层次更为丰富。",
+      "links": [
+        {
+          "label": "网易云音乐",
+          "url": "https://y.music.163.com/m/user?id=1656858754"
+        },
+        {
+          "label": "QQ音乐",
+          "url": "https://c6.y.qq.com/base/fcgi-bin/u?__=lxOE5R4mtyYK"
+        },
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/cn/album/1845805189"
+        }
+      ]
+    },
+    "saturn": {
+      "alt": "《Saturn Diary》专辑封面",
+      "title": "Saturn Diary",
+      "titleLang": "en",
+      "meta": "专辑 · 2023 · 独立发行",
+      "copy": "首张个人专辑，创作于十三至十五岁之间。",
+      "links": [
+        {
+          "label": "网易云音乐",
+          "url": "https://y.music.163.com/m/user?id=1656858754"
+        },
+        {
+          "label": "QQ音乐",
+          "url": "https://c6.y.qq.com/base/fcgi-bin/u?__=lxOE5R4mtyYK"
+        }
+      ]
+    },
+    "singles": {
+      "alt": "Tony D 肖像",
+      "title": "单曲",
+      "meta": "2021 &ndash; 2025",
+      "trackList": [
+        "HER",
+        "Look in the Mirror",
+        "I Do",
+        "Curiosity",
+        "If It&rsquo;s True",
+        "Time Will Speak",
+        "Oh, Mother"
+      ],
+      "copyLang": "en",
+      "links": [
+        {
+          "label": "全部作品",
+          "url": "https://y.music.163.com/m/user?id=1656858754"
+        }
+      ]
+    }
+  },
+  "videos": {
+    "overthinking": {
+      "kicker": "同名主打",
+      "title": "想太多",
+      "sub": "2025 · 官方影像"
+    },
+    "look-in-the-mirror": {
+      "title": "Look in the Mirror",
+      "titleLang": "en",
+      "sub": "2024 · 播放量 200万+"
+    },
+    "her": {
+      "title": "HER",
+      "titleLang": "en",
+      "sub": "2024 · 播放量 100万+"
+    },
+    "i-do": {
+      "title": "I Do",
+      "titleLang": "en",
+      "sub": "American Songwriter 2025 冠军"
+    },
+    "its-raining": {
+      "title": "It&rsquo;s Raining",
+      "titleLang": "en",
+      "sub": "2021 · 网易云当月最佳单曲"
+    },
+    "curiosity": {
+      "title": "Curiosity",
+      "titleLang": "en",
+      "sub": "原创歌曲"
+    },
+    "if-its-true": {
+      "title": "If It&rsquo;s True",
+      "titleLang": "en",
+      "sub": "2024 · ISC 半决赛入围"
+    },
+    "time-will-speak": {
+      "title": "Time Will Speak",
+      "titleLang": "en",
+      "sub": "2023"
+    },
+    "saturn-diary": {
+      "title": "Saturn Diary",
+      "titleLang": "en",
+      "sub": "2023 · 首张专辑"
+    },
+    "how-it-feels-like": {
+      "title": "How It Feels Like",
+      "titleLang": "en",
+      "sub": "2022 · UKSC 特别提名"
+    },
+    "oh-mother": {
+      "title": "Oh, Mother",
+      "titleLang": "en",
+      "sub": "2022 · JLSC 周冠军"
+    },
+    "one-day": {
+      "title": "一天",
+      "sub": "2021 · 首支中文单曲"
+    },
+    "be-mine": {
+      "title": "Be Mine",
+      "titleLang": "en",
+      "sub": "2021 · 首支原创单曲"
+    }
+  },
+  "playlists": [
+    {
+      "label": "抖音",
+      "url": "https://v.douyin.com/i5y5K2vD"
+    },
+    {
+      "label": "微博",
+      "url": "https://weibo.com/6500843556/5171711167171346"
+    },
+    {
+      "label": "YouTube（海外）",
+      "url": "https://youtube.com/@tony-deng"
+    }
+  ],
+  "about": {
+    "altTop": "Tony D 肖像",
+    "altWide": "Tony D 现场演出",
+    "captionWide": "School of Rock House Band 主音吉他手",
+    "altBottom": "Tony D 肖像",
+    "prose": [
+      "<strong>邓乐潼（Tony D）</strong>2007 年出生于山东济南，童年往返于济南与北京，\n      九岁随家人移居纽约，现居西雅图，就读于贝尔维尤 Newport High School，2026 届。",
+      "他在父亲搭建并经营的家庭录音棚中长大——父亲是音乐制作人、录音与混音工程师，\n      早年也是乐队主音吉他手和创作歌手。乐器与录音设备就是这个家的一部分。\n      他学过钢琴、古筝、小提琴和大提琴，但吉他始终是他最钟爱的乐器。\n      他拥有绝对音感——父亲发现这一点，是在他换吉他弦时不借助调音器便准确调准了音高。",
+      "2019 年疫情期间，学校停课，他开始写歌。十三岁那年的母亲节，\n      他决定为妈妈写一首歌，两个小时内完成了词、曲和小样。歌里写的是妈妈的规矩、\n      他自己的委屈，还有一个用歌换两双球鞋的约定。他的大部分作品，都始于这样平常的瞬间。"
+    ],
+    "quote": "音乐是我表达自己的方式。",
+    "proseAfterQuote": [
+      "十三岁时，他成为西雅图地区 School of Rock House Band 的主音吉他手，\n      在 Hard Rock Café 等场地定期演出；同年以中学生身份被伯克利音乐学院吉他暑期项目破格录取，\n      并连续参加三年。2025 年 5 月，他与环球音乐版权集团（UMPG）签订全球独家词曲版权协议；\n      同年 10 月，第二张专辑《<em>想太多</em>》由环球音乐集团全球发行。"
+    ],
+    "influencesHeading": "音乐影响",
+    "influences": [
+      {
+        "label": "披头士 The Beatles"
+      },
+      {
+        "label": "绿洲 Oasis"
+      },
+      {
+        "label": "酷玩 Coldplay"
+      },
+      {
+        "label": "Amy Winehouse",
+        "lang": "en"
+      },
+      {
+        "label": "Jeff Buckley",
+        "lang": "en"
+      },
+      {
+        "label": "Daniel Caesar",
+        "lang": "en"
+      }
+    ],
+    "profileHeading": "个人资料",
+    "facts": [
+      {
+        "term": "出生",
+        "value": "2007 年 10 月 4 日 · 山东济南"
+      },
+      {
+        "term": "现居",
+        "value": "美国华盛顿州西雅图"
+      },
+      {
+        "term": "就读",
+        "value": "贝尔维尤 Newport High School — 2026 届"
+      },
+      {
+        "term": "乐器",
+        "value": "吉他 · 钢琴 · 古筝 · 小提琴 · 大提琴"
+      },
+      {
+        "term": "曲风",
+        "value": "独立摇滚 · 英伦摇滚 · 爵士 · 灵魂乐 · R&amp;B"
+      },
+      {
+        "term": "版权签约",
+        "value": "环球音乐版权集团（UMPG），2025 年"
+      },
+      {
+        "term": "音乐之外",
+        "value": "滑雪、篮球、网球——十四岁取得北美 PSIA 单板滑雪教练认证"
+      }
+    ]
+  },
+  "milestones": {
+    "be-mine": "<b lang=\"en\">Be Mine</b> — 首支原创单曲，2021 年 3 月",
+    "its-raining": "<b lang=\"en\">It&rsquo;s Raining</b> — 网易云音乐硬地原创榜「当月最佳单曲」",
+    "uksc-five-star": "★★★★★ 评级作品 — 英国歌曲创作大赛（UKSC）",
+    "one-day": "<b>一天</b> — 首支原创中文单曲，2021 年 10 月",
+    "how-it-feels-like": "<b lang=\"en\">How It Feels Like</b> — ★★★★★ 特别提名，英国歌曲创作大赛（UKSC）",
+    "oh-mother": "<b lang=\"en\">Oh, Mother</b> — 约翰·列侬歌曲创作大赛（JLSC）周冠军",
+    "isc-finalist": "决赛入围 — 国际歌曲创作大赛（ISC）",
+    "masc-gasc-finalist": "决赛入围 — Mid-Atlantic Song Contest · Great American Song Contest",
+    "uksc-semi": "半决赛入围 — 英国歌曲创作大赛（UKSC）",
+    "saturn-diary": "<b lang=\"en\">Saturn Diary</b> — 首张个人专辑，2023 年 5 月",
+    "time-will-speak": "<b lang=\"en\">Time Will Speak</b> — 半决赛入围，英国歌曲创作大赛（UKSC）",
+    "ode-to-joy": "为乐队折耳根创作原创歌曲《欢乐颂歌》——正式发行",
+    "look-in-the-mirror": "<b lang=\"en\">Look in the Mirror</b> — 国际青少年音乐大赛（IYMC）冠军",
+    "iama-third": "国际原声音乐大奖（IAMA）AAA／另类组第三名",
+    "qq-2m": "QQ音乐播放量 200 万+ · 登上飙升榜、新歌榜、流行指数榜（前十）及热歌榜",
+    "her": "<b lang=\"en\">HER</b> — 国际青少年音乐大赛（IYMC）亚军",
+    "netease-1m": "网易云音乐播放量 100 万+ · 登上热搜榜、新歌榜及流行指数榜",
+    "if-its-true": "<b lang=\"en\">If It&rsquo;s True</b> — ISC 与 Unsigned Only 半决赛入围",
+    "umpg": "与<b>环球音乐版权集团（UMPG）</b>签订全球独家词曲版权协议，2025 年 5 月",
+    "i-do": "<b lang=\"en\">I Do</b> — American Songwriter 歌曲大赛青少年组冠军",
+    "overthinking": "<b>《想太多》</b> — 第二张专辑，由环球音乐集团全球发行，2025 年 10 月 15 日"
+  },
+  "press": {
+    "umpg-signing": {
+      "src": "微博",
+      "title": "环球音乐版权签约速报",
+      "gloss": "UMPG 签约报道"
+    },
+    "umg-china": {
+      "src": "微博",
+      "title": "环球音乐中国",
+      "gloss": "官方发布"
+    },
+    "umg-teaser": {
+      "src": "微博",
+      "title": "环球集团新歌预告",
+      "gloss": "新作预告"
+    },
+    "comment-1": {
+      "src": "微博",
+      "title": "微博热门评论",
+      "gloss": "听众评论"
+    },
+    "comment-2": {
+      "src": "微博",
+      "title": "微博热门评论",
+      "gloss": "听众评论"
+    },
+    "comment-3": {
+      "src": "微博",
+      "title": "微博热门评论",
+      "gloss": "听众评论"
+    },
+    "comment-4": {
+      "src": "微博",
+      "title": "微博热门评论",
+      "gloss": "听众评论"
+    }
+  },
+  "contact": {
+    "who": "经纪事务 — 张女士",
+    "columns": [
+      {
+        "heading": "音乐平台",
+        "items": [
+          {
+            "label": "网易云音乐",
+            "url": "https://y.music.163.com/m/user?id=1656858754"
+          },
+          {
+            "label": "QQ音乐",
+            "url": "https://c6.y.qq.com/base/fcgi-bin/u?__=lxOE5R4mtyYK"
+          },
+          {
+            "label": "Apple Music",
+            "url": "https://music.apple.com/cn/album/1845805189"
+          },
+          {
+            "label": "Spotify",
+            "url": "https://open.spotify.com/album/4r9iJEZh7BkIUN273VB8yf",
+            "muted": "（海外）"
+          }
+        ]
+      },
+      {
+        "heading": "社交平台",
+        "items": [
+          {
+            "label": "抖音",
+            "url": "https://v.douyin.com/i5y5K2vD"
+          },
+          {
+            "label": "微博",
+            "url": "https://weibo.com/6500843556/5171711167171346"
+          },
+          {
+            "label": "YouTube",
+            "url": "https://youtube.com/@tony-deng",
+            "muted": "（海外）"
+          }
+        ]
+      },
+      {
+        "heading": "版权与发行",
+        "items": [
+          {
+            "label": "环球音乐版权集团（UMPG）"
+          },
+          {
+            "label": "环球音乐集团（UMG）",
+            "muted": "— 发行",
+            "mutedTight": true
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "Tony D · 邓乐潼",
+    "backToTop": "返回顶部"
+  },
+  "railAria": {
+    "singles": "单曲",
+    "press": "媒体报道"
+  },
+  "singlesHeading": "单曲",
+  "pressNav": {
+    "prev": "上一条报道",
+    "next": "下一条报道"
+  }
+}

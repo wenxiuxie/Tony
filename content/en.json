@@ -1,0 +1,480 @@
+{
+  "lang": "en",
+  "videoBackend": "youtube",
+  "assetPrefix": "",
+  "head": {
+    "title": "Tony D — Singer-Songwriter",
+    "description": "Tony D (Yuetong Deng) — singer-songwriter and guitarist. Signed writer, Universal Music Publishing Group."
+  },
+  "pages": {
+    "home": {
+      "title": "Tony D — Singer-Songwriter",
+      "description": "Tony D (Yuetong Deng) — singer-songwriter and guitarist. Signed writer, Universal Music Publishing Group."
+    },
+    "music": {
+      "title": "Music — Tony D",
+      "description": "Albums, singles and where to listen. Every track written, composed and performed by Tony D."
+    },
+    "videos": {
+      "title": "Videos — Tony D",
+      "description": "Official videos for Tony D's original songs, with the full catalogue of releases."
+    },
+    "about": {
+      "title": "About — Tony D",
+      "description": "Tony D (Yuetong Deng) — singer-songwriter and guitarist. Biography, influences, profile and milestones."
+    },
+    "press": {
+      "title": "Press — Tony D",
+      "description": "Coverage and commentary on Tony D, mostly on Weibo and in Chinese."
+    }
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "ariaPrimary": "Primary",
+    "burgerLabel": "Open menu",
+    "links": [
+      {
+        "href": "music.html",
+        "label": "Music"
+      },
+      {
+        "href": "videos.html",
+        "label": "Videos"
+      },
+      {
+        "href": "about.html",
+        "label": "About"
+      },
+      {
+        "href": "press.html",
+        "label": "Press"
+      }
+    ],
+    "cta": {
+      "href": "#contact",
+      "label": "Contact"
+    },
+    "altLang": {
+      "href": "zh/index.html",
+      "label": "中文",
+      "lang": "zh-Hans"
+    }
+  },
+  "hero": {
+    "imageAlt": "Tony D seated with an acoustic guitar",
+    "eyebrow": "Signed Writer &middot; Universal Music Publishing Group",
+    "srTitle": "Tony D — Overthinking",
+    "sub": "Singer-songwriter and guitarist from Seattle.\n      <em>Indie rock, britpop, soul.</em>\n      Second album <strong>Overthinking</strong> out now via Universal Music Group.",
+    "playLabel": "Play",
+    "nextLabel": "Next track",
+    "nowPlaying": "Now playing",
+    "secondary": {
+      "href": "#music",
+      "label": "Listen everywhere"
+    }
+  },
+  "tracks": {
+    "bluesky": {
+      "title": "bluesky"
+    },
+    "pozhen": {
+      "title": "pozhen"
+    },
+    "shiming": {
+      "title": "shiming"
+    },
+    "tiankong": {
+      "title": "tiankong"
+    },
+    "weifeng": {
+      "title": "weifeng"
+    },
+    "birthday": {
+      "title": "birthday"
+    },
+    "birthday2": {
+      "title": "birthday2"
+    },
+    "heart": {
+      "title": "heart"
+    },
+    "little_star": {
+      "title": "little_star"
+    },
+    "xiaofeng": {
+      "title": "xiaofeng"
+    }
+  },
+  "ticker": {
+    "aria": "Career highlights",
+    "items": [
+      "<b>2M+</b> streams · QQ Music",
+      "<b>UMPG</b> signed writer",
+      "<b>IYMC</b> Champion 2024",
+      "<b>1st Place</b> American Songwriter 2025",
+      "<b>ISC</b> Finalist",
+      "<b>JLSC</b> Weekly Winner",
+      "<b>1M+</b> streams · NetEase",
+      "<b>IAMA</b> 3rd Place AAA"
+    ]
+  },
+  "sections": {
+    "music": {
+      "num": "01",
+      "title": "Releases",
+      "desc": "Two albums. Every track written, composed and performed by Tony."
+    },
+    "videos": {
+      "num": "02",
+      "title": "Videos",
+      "desc": "Original songs, shot and cut for the channel. Press one and the player loads in place — nothing from YouTube runs until you do.",
+      "more": "More videos"
+    },
+    "about": {
+      "num": "03",
+      "title": "About",
+      "desc": "Jinan to Beijing to New York to Seattle — and a home studio the whole way through."
+    },
+    "milestones": {
+      "num": "04",
+      "title": "Milestones",
+      "desc": "Five years, from a first single to a global release.",
+      "more": "See more"
+    },
+    "press": {
+      "num": "05",
+      "title": "Press",
+      "desc": "Coverage and commentary, mostly on Weibo and in Chinese."
+    },
+    "contact": {
+      "num": "06",
+      "title": "Get in touch",
+      "desc": "For inquiries, licensing and collaboration."
+    }
+  },
+  "groove": {
+    "aria": "Seek within the track",
+    "idle": "The groove is the waveform of the song. Press play, then click anywhere on the record to jump there.",
+    "hint": "Click to jump"
+  },
+  "releases": {
+    "overthinking": {
+      "alt": "Overthinking album cover",
+      "badge": "New",
+      "title": "Overthinking <span lang=\"zh\">想太多</span>",
+      "meta": "Album · 2025 · Universal Music Group",
+      "copy": "Seven tracks — six English, one Mandarin. A more refined sound and layered arrangements.",
+      "links": [
+        {
+          "label": "Spotify",
+          "url": "https://open.spotify.com/album/4r9iJEZh7BkIUN273VB8yf"
+        },
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/cn/album/1845805189"
+        }
+      ]
+    },
+    "saturn": {
+      "alt": "Saturn Diary album cover",
+      "title": "Saturn Diary",
+      "meta": "Album · 2023 · Independent",
+      "copy": "The debut record — written between the ages of thirteen and fifteen.",
+      "links": [
+        {
+          "label": "Spotify",
+          "url": "https://open.spotify.com/album/0ezKk1Hv90SU6R2ovezHKd"
+        },
+        {
+          "label": "Apple Music",
+          "url": "",
+          "missing": true
+        }
+      ]
+    },
+    "singles": {
+      "alt": "Tony D portrait",
+      "title": "Singles",
+      "meta": "2021 &ndash; 2025",
+      "trackList": [
+        "HER",
+        "Look in the Mirror",
+        "I Do",
+        "Curiosity",
+        "If It&rsquo;s True",
+        "Time Will Speak",
+        "Oh, Mother"
+      ],
+      "links": [
+        {
+          "label": "All releases",
+          "url": "https://youtube.com/playlist?list=PLiczr0D8JT1-S0Gx_Xaki4b12jLffvy78"
+        }
+      ]
+    }
+  },
+  "videos": {
+    "overthinking": {
+      "kicker": "Title track",
+      "title": "Overthinking",
+      "sub": "2025 · Official video"
+    },
+    "look-in-the-mirror": {
+      "title": "Look in the Mirror",
+      "sub": "2024 · 2M+ streams"
+    },
+    "her": {
+      "title": "HER",
+      "sub": "2024 · 1M+ streams"
+    },
+    "i-do": {
+      "title": "I Do",
+      "sub": "1st Place · American Songwriter 2025"
+    },
+    "its-raining": {
+      "title": "It&rsquo;s Raining",
+      "sub": "2021 · NetEase Monthly Best Single"
+    },
+    "curiosity": {
+      "title": "Curiosity",
+      "sub": "Original song"
+    },
+    "if-its-true": {
+      "title": "If It&rsquo;s True",
+      "sub": "2024 · ISC Semi-Finalist"
+    },
+    "time-will-speak": {
+      "title": "Time Will Speak",
+      "sub": "2023"
+    },
+    "saturn-diary": {
+      "title": "Saturn Diary",
+      "sub": "2023 · Debut album"
+    },
+    "how-it-feels-like": {
+      "title": "How It Feels Like",
+      "sub": "2022 · UKSC Special Mention"
+    },
+    "oh-mother": {
+      "title": "Oh, Mother",
+      "sub": "2022 · JLSC Weekly Winner"
+    },
+    "one-day": {
+      "title": "One Day <span lang=\"zh\">一天</span>",
+      "sub": "2021 · First Chinese single"
+    },
+    "be-mine": {
+      "title": "Be Mine",
+      "sub": "2021 · Debut single"
+    }
+  },
+  "playlists": [
+    {
+      "label": "Original songs",
+      "url": "https://youtube.com/playlist?list=PLiczr0D8JT1-S0Gx_Xaki4b12jLffvy78"
+    },
+    {
+      "label": "Cover songs",
+      "url": "https://youtube.com/playlist?list=PLiczr0D8JT18seBVlU1p5K7X79Z_dcZoU"
+    },
+    {
+      "label": "Guitar sessions",
+      "url": "https://youtube.com/playlist?list=PLiczr0D8JT1-9h7ZNM1pG4JY7ldO2ZorW"
+    },
+    {
+      "label": "Channel",
+      "url": "https://youtube.com/@tony-deng"
+    }
+  ],
+  "about": {
+    "altTop": "Tony D portrait",
+    "altWide": "Tony D performing live with a guitar",
+    "captionWide": "Lead guitarist, School of Rock House Band",
+    "altBottom": "Tony D portrait",
+    "prose": [
+      "<strong>Tony Deng</strong> was born in Jinan, Shandong in 2007 and spent his early childhood between Jinan and Beijing before moving to New York at nine. He now lives in Seattle, and is in the Class of 2026 at Newport High School, Bellevue.",
+      "He grew up inside a home studio built and run by his father — a producer, recording and mixing engineer, and formerly a lead guitarist and songwriter himself. Instruments and recording gear were simply what the house was made of. Tony studied piano, guzheng, violin and cello, but guitar has always been the one. He has perfect pitch, which his father discovered when Tony restrung a guitar and tuned it accurately without a tuner.",
+      "He started writing in 2019, during the pandemic, when school stopped and there was little to do but practise. On Mother&rsquo;s Day at thirteen he decided to write his mum a song; two hours later the lyrics, the music and the demo were done. It was about her rules, his frustrations, and a deal to trade the song for two pairs of basketball shoes. Most of his songs start somewhere that ordinary."
+    ],
+    "quote": "Music is how I often express myself.",
+    "proseAfterQuote": [
+      "At thirteen he became lead guitarist of the House Band at School of Rock in the Seattle area, playing venues including the Hard Rock Café, and was admitted to Berklee College of Music&rsquo;s Guitar Summer Program as a middle school student — returning three years running. In May 2025 he signed an exclusive global publishing deal with UMPG, and that October released <em>Overthinking</em> worldwide through Universal Music Group."
+    ],
+    "influencesHeading": "Influences",
+    "influences": [
+      {
+        "label": "The Beatles"
+      },
+      {
+        "label": "Oasis"
+      },
+      {
+        "label": "Coldplay"
+      },
+      {
+        "label": "Amy Winehouse"
+      },
+      {
+        "label": "Jeff Buckley"
+      },
+      {
+        "label": "Daniel Caesar"
+      }
+    ],
+    "profileHeading": "Profile",
+    "facts": [
+      {
+        "term": "Born",
+        "value": "4 October 2007 · Jinan, Shandong"
+      },
+      {
+        "term": "Based",
+        "value": "Seattle, Washington"
+      },
+      {
+        "term": "School",
+        "value": "Newport High School, Bellevue — Class of 2026"
+      },
+      {
+        "term": "Instruments",
+        "value": "Guitar · piano · guzheng · violin · cello"
+      },
+      {
+        "term": "Genres",
+        "value": "Indie rock · britpop · jazz · soul · R&amp;B"
+      },
+      {
+        "term": "Publishing",
+        "value": "Universal Music Publishing Group, 2025"
+      },
+      {
+        "term": "Off stage",
+        "value": "Skiing, basketball, tennis — PSIA-certified snowboard instructor at 14"
+      }
+    ]
+  },
+  "milestones": {
+    "be-mine": "<b>Be Mine</b> — debut original single, March 2021",
+    "its-raining": "<b>It&rsquo;s Raining</b> — Monthly Best Single, NetEase Cloud Music Hard Ground Indie Chart",
+    "uksc-five-star": "★★★★★ rated work — UK Songwriting Contest",
+    "one-day": "<b>One Day</b> — first original Chinese single, October 2021",
+    "how-it-feels-like": "<b>How It Feels Like</b> — ★★★★★ Special Mention, UK Songwriting Contest",
+    "oh-mother": "<b>Oh, Mother</b> — Weekly Winner, John Lennon Songwriting Contest",
+    "isc-finalist": "Finalist — International Songwriting Competition",
+    "masc-gasc-finalist": "Finalist — Mid-Atlantic Song Contest · Great American Song Contest",
+    "uksc-semi": "Semi-Finalist — UK Songwriting Contest",
+    "saturn-diary": "<b>Saturn Diary</b> — debut album, May 2023",
+    "time-will-speak": "<b>Time Will Speak</b> — Semi-Finalist, UK Songwriting Contest",
+    "ode-to-joy": "Composed <b lang=\"zh\">欢乐颂歌</b> (Ode to Joy) for the band <span lang=\"zh\">折耳根</span> — officially released",
+    "look-in-the-mirror": "<b>Look in the Mirror</b> — Champion, International Youth Music Competition",
+    "iama-third": "3rd Place, AAA/Alternative — International Acoustic Music Awards",
+    "qq-2m": "2M+ streams on QQ Music · Rising, New Release, Pop Index (Top 10) and Hot Songs charts",
+    "her": "<b>HER</b> — Runner-up, International Youth Music Competition",
+    "netease-1m": "1M+ streams on NetEase Cloud Music · Trending, New Release and Pop Index charts",
+    "if-its-true": "<b>If It&rsquo;s True</b> — Semi-Finalist, ISC and Unsigned Only",
+    "umpg": "Signed an exclusive global publishing agreement with <b>Universal Music Publishing Group</b>, May 2025",
+    "i-do": "<b>I Do</b> — 1st Place, Teen category, American Songwriter Song Contest",
+    "overthinking": "<b>Overthinking</b> — second album, released globally by Universal Music Group, 15 October 2025"
+  },
+  "press": {
+    "umpg-signing": {
+      "src": "Weibo",
+      "title": "Universal Music Publishing Signing",
+      "gloss": "News report"
+    },
+    "umg-china": {
+      "src": "Weibo",
+      "title": "Universal Music China",
+      "gloss": "Official post"
+    },
+    "umg-teaser": {
+      "src": "Weibo",
+      "title": "Universal Music Group New Song Teaser",
+      "gloss": "Release announcement"
+    },
+    "comment-1": {
+      "src": "Weibo",
+      "title": "Featured Weibo Comment",
+      "gloss": "Listener commentary"
+    },
+    "comment-2": {
+      "src": "Weibo",
+      "title": "Featured Weibo Comment",
+      "gloss": "Listener commentary"
+    },
+    "comment-3": {
+      "src": "Weibo",
+      "title": "Featured Weibo Comment",
+      "gloss": "Listener commentary"
+    },
+    "comment-4": {
+      "src": "Weibo",
+      "title": "Featured Weibo Comment",
+      "gloss": "Listener commentary"
+    }
+  },
+  "contact": {
+    "who": "Management — Ms. Zhang",
+    "columns": [
+      {
+        "heading": "Streaming",
+        "items": [
+          {
+            "label": "Spotify",
+            "url": "https://open.spotify.com/album/4r9iJEZh7BkIUN273VB8yf"
+          },
+          {
+            "label": "Apple Music",
+            "url": "https://music.apple.com/cn/album/1845805189"
+          },
+          {
+            "label": "NetEase Cloud Music",
+            "url": "https://y.music.163.com/m/user?id=1656858754"
+          },
+          {
+            "label": "QQ Music",
+            "url": "https://c6.y.qq.com/base/fcgi-bin/u?__=lxOE5R4mtyYK"
+          }
+        ]
+      },
+      {
+        "heading": "Social",
+        "items": [
+          {
+            "label": "YouTube",
+            "url": "https://youtube.com/@tony-deng"
+          },
+          {
+            "label": "Douyin",
+            "url": "https://v.douyin.com/i5y5K2vD"
+          }
+        ]
+      },
+      {
+        "heading": "Publishing",
+        "items": [
+          {
+            "label": "Universal Music Publishing Group"
+          },
+          {
+            "label": "Universal Music Group",
+            "muted": "— distribution"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "Tony D · <span lang=\"zh\">邓乐潼</span>",
+    "backToTop": "Back to top"
+  },
+  "railAria": {
+    "singles": "Singles",
+    "press": "Press coverage"
+  },
+  "singlesHeading": "Singles",
+  "pressNav": {
+    "prev": "Previous coverage",
+    "next": "Next coverage"
+  }
+}

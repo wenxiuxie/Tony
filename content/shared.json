@@ -1,0 +1,292 @@
+{
+  "$comment": "Structure and media shared by both locales. Strings live in en.json / zh.json, keyed by the ids here. Order in these arrays is the order on the page.",
+  "$contactEmail": "PLACEHOLDER. The address on the resume is Ms Zhang's private mailbox and she has not confirmed it may be published. It renders in plain text and as a mailto: on all ten pages, so committing it to a public repo and deploying is a one-way door. Swap in the real address once she confirms - one line here, rebuild, redeploy.",
+  "contactEmail": "contact@example.com",
+  "copyrightYear": "2025",
+  "images": {
+    "hero": "img/hero-portrait.webp",
+    "heroPlate": "img/hero-plate.webp",
+    "heroSubject": "img/hero-subject.webp",
+    "ink": "img/ink-overthinking.webp",
+    "aboutTop": "img/portrait-golden.webp",
+    "aboutWide": "img/live-hardrock.webp",
+    "aboutBottom": "img/portrait-dark.webp",
+    "heroCuts": [
+      "img/portrait-dark.webp",
+      "img/live-hardrock.webp",
+      "img/portrait-golden.webp"
+    ]
+  },
+  "$tracks": "album = which record the track belongs to (names withheld while albumMapProvisional). hue = stage-light colour in degrees: 322 magenta / 192 cyan / 34 amber. While a track plays the portrait cycles colour → song gel → silver → complementary gel → colour; the lights take this hue. It does not have to match a release.",
+  "$albumMap": "PROVISIONAL. The label has not sent a track -> album table, and it cannot be guessed: these files are named in pinyin and the released tracks are titled in English. The mapping below is made up, and it exists only so the grade has something to switch on. While `albumMapProvisional` is true the album NAME is never printed on the page - only the grade is used - so nothing on screen claims a track is on a record it is not. Delete that flag once the real table arrives and the now-playing line starts naming the album.",
+  "albumMapProvisional": true,
+  "tracks": [
+    {
+      "id": "weifeng",
+      "file": "audio/weifeng.mp3",
+      "album": "overthinking",
+      "hue": 322
+    },
+    {
+      "id": "bluesky",
+      "file": "audio/bluesky.mp3",
+      "album": "saturn",
+      "hue": 198
+    },
+    {
+      "id": "pozhen",
+      "file": "audio/pozhen.mp3",
+      "album": "saturn",
+      "hue": 34
+    },
+    {
+      "id": "shiming",
+      "file": "audio/shiming.mp3",
+      "album": "singles",
+      "hue": 322
+    },
+    {
+      "id": "tiankong",
+      "file": "audio/tiankong.mp3",
+      "album": "overthinking",
+      "hue": 192
+    },
+    {
+      "id": "birthday",
+      "file": "audio/birthday.mp3",
+      "album": "overthinking",
+      "hue": 28
+    },
+    {
+      "id": "birthday2",
+      "file": "audio/birthday2.mp3",
+      "album": "saturn",
+      "hue": 38
+    },
+    {
+      "id": "heart",
+      "file": "audio/heart.mp3",
+      "album": "saturn",
+      "hue": 330
+    },
+    {
+      "id": "little_star",
+      "file": "audio/little_star_music.mp3",
+      "album": "singles",
+      "hue": 210
+    },
+    {
+      "id": "xiaofeng",
+      "file": "audio/xiaofeng.mp3",
+      "album": "overthinking",
+      "hue": 185
+    }
+  ],
+  "releases": [
+    {
+      "id": "overthinking",
+      "$mood": "chroma is what the hero grades itself to while a track off this record plays, as a multiplier on the saturation already in the portrait's filter chain - the reference. Mean chroma 0.108 over the sleeve, and the site was designed around it, so this record IS the page at its own colour.",
+      "mood": { "chroma": 1 },
+      "art": "img/album-overthinking.webp",
+      "badge": true,
+      "$comment": "layers = the sleeve cut into depth planes by tools/sleeve.py. Present means the card composites them instead of showing `art` flat; absent means the flat artwork. Rerun that tool after changing `art` - build.py cannot tell these are stale.",
+      "layers": {
+        "back": "img/album-overthinking-back.webp",
+        "ink": "img/album-overthinking-ink.webp",
+        "near": "img/album-overthinking-near.webp",
+        "mark": "img/album-overthinking-mark.webp",
+        "frames": 3
+      }
+    },
+    {
+      "id": "saturn",
+      "$mood": "chroma is what the hero grades itself to while a track off this record plays, as a multiplier on the saturation already in the portrait's filter chain - the whole reason this mechanism exists. The sleeve is not mostly grey, it is grey: mean chroma 0.000 and a maximum of 0.004 out of 1, measured over the whole image. A track off it drains every colour out of the first screen, and the one after it detonates the colour back.",
+      "mood": { "chroma": 0 },
+      "art": "img/album-saturn.webp",
+      "badge": false
+    },
+    {
+      "id": "singles",
+      "$mood": "chroma is what the hero grades itself to while a track off this record plays, as a multiplier on the saturation already in the portrait's filter chain - measured the same way, the orange portrait that stands in for the singles means 0.448 - four times the Overthinking sleeve. So this one pushes PAST the site palette rather than under it. Held well below the 4x it measures: saturate() multiplies a photograph that is already graded hot on the beat, and the honest ratio turns him orange.",
+      "mood": { "chroma": 1.3 },
+      "art": "img/portrait-orange.webp",
+      "badge": false
+    }
+  ],
+  "videos": [
+    {
+      "id": "overthinking",
+      "yt": "WemMShRTg6E",
+      "bv": "",
+      "poster": "img/video/WemMShRTg6E.webp",
+      "feature": true
+    },
+    {
+      "id": "look-in-the-mirror",
+      "yt": "Z-EP0Qwl2xw",
+      "bv": "",
+      "poster": "img/video/Z-EP0Qwl2xw.webp",
+      "feature": false
+    },
+    {
+      "id": "her",
+      "yt": "NwpjbcHqua4",
+      "bv": "",
+      "poster": "img/video/NwpjbcHqua4.webp",
+      "feature": false
+    },
+    {
+      "id": "i-do",
+      "yt": "4BrMzNiupXQ",
+      "bv": "",
+      "poster": "img/video/4BrMzNiupXQ.webp",
+      "feature": false
+    },
+    {
+      "id": "its-raining",
+      "yt": "R5OQh-loln4",
+      "bv": "",
+      "poster": "img/video/R5OQh-loln4.webp",
+      "feature": false
+    },
+    {
+      "id": "curiosity",
+      "yt": "_KBXlZYRx8E",
+      "bv": "",
+      "poster": "img/video/_KBXlZYRx8E.webp",
+      "feature": false
+    },
+    {
+      "id": "if-its-true",
+      "yt": "VeyHXexUB8Y",
+      "bv": "",
+      "poster": "img/video/VeyHXexUB8Y.webp",
+      "feature": false
+    },
+    {
+      "id": "time-will-speak",
+      "yt": "xOxKN4OKFsw",
+      "bv": "",
+      "poster": "img/video/xOxKN4OKFsw.webp",
+      "feature": false
+    },
+    {
+      "id": "saturn-diary",
+      "yt": "VSP5IlXHq8E",
+      "bv": "",
+      "poster": "img/video/VSP5IlXHq8E.webp",
+      "feature": false
+    },
+    {
+      "id": "how-it-feels-like",
+      "yt": "foud-nkltS8",
+      "bv": "",
+      "poster": "img/video/foud-nkltS8.webp",
+      "feature": false
+    },
+    {
+      "id": "oh-mother",
+      "yt": "f55cIm9AYd4",
+      "bv": "",
+      "poster": "img/video/f55cIm9AYd4.webp",
+      "feature": false
+    },
+    {
+      "id": "one-day",
+      "yt": "CiVWFo4Mlbg",
+      "bv": "",
+      "poster": "img/video/CiVWFo4Mlbg.webp",
+      "feature": false
+    },
+    {
+      "id": "be-mine",
+      "yt": "5qcaCLkbfys",
+      "bv": "",
+      "poster": "img/video/5qcaCLkbfys.webp",
+      "feature": false
+    }
+  ],
+  "milestones": [
+    {
+      "year": "2021",
+      "current": false,
+      "items": [
+        "be-mine",
+        "its-raining",
+        "uksc-five-star",
+        "one-day"
+      ]
+    },
+    {
+      "year": "2022",
+      "current": false,
+      "items": [
+        "how-it-feels-like",
+        "oh-mother",
+        "isc-finalist",
+        "masc-gasc-finalist",
+        "uksc-semi"
+      ]
+    },
+    {
+      "year": "2023",
+      "current": false,
+      "items": [
+        "saturn-diary",
+        "time-will-speak",
+        "ode-to-joy"
+      ]
+    },
+    {
+      "year": "2024",
+      "current": false,
+      "items": [
+        "look-in-the-mirror",
+        "iama-third",
+        "qq-2m",
+        "her",
+        "netease-1m",
+        "if-its-true"
+      ]
+    },
+    {
+      "year": "2025",
+      "current": true,
+      "items": [
+        "umpg",
+        "i-do",
+        "overthinking"
+      ]
+    }
+  ],
+  "press": [
+    {
+      "id": "umpg-signing",
+      "url": "https://weibo.com/6500843556/5171711167171346"
+    },
+    {
+      "id": "umg-china",
+      "url": "https://m.weibo.cn/status/5222705983127872"
+    },
+    {
+      "id": "umg-teaser",
+      "url": "https://weibo.com/7483769457/5221981236232680"
+    },
+    {
+      "id": "comment-1",
+      "url": "https://weibo.com/1730317584/5116894815983612"
+    },
+    {
+      "id": "comment-2",
+      "url": "https://weibo.com/2231403227/5116603901676631"
+    },
+    {
+      "id": "comment-3",
+      "url": "https://weibo.com/3995233655/5116588036981807"
+    },
+    {
+      "id": "comment-4",
+      "url": "https://weibo.com/1876131803/5222411744314014"
+    }
+  ]
+}

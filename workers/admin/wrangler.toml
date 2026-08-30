@@ -1,0 +1,29 @@
+name = "tony-site-admin"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+# The admin UI calls this at /api/admin/*, same origin as the site, so the
+# browser never makes a cross-origin request and never talks to GitHub.
+# Replace the zone below with your own domain.
+routes = [
+  { pattern = "tonydeng.com/api/admin/*", zone_name = "tonydeng.com" }
+]
+
+[vars]
+# Cloudflare Zero Trust → Settings → Custom Pages shows your team domain.
+ACCESS_TEAM_DOMAIN = "REPLACE-ME.cloudflareaccess.com"
+
+# Zero Trust → Access → Applications → your app → Overview → Application Audience (AUD) Tag.
+ACCESS_AUD = "REPLACE-ME"
+
+GITHUB_REPO = "DarkStar-31/Tony_Deng_Website"
+LIVE_BRANCH = "main"
+DRAFT_BRANCH = "draft"
+
+# Emails allowed to push draft → live. Everyone else who passes Access can
+# edit and preview, but not publish. Comma-separated.
+PUBLISHERS = "jochen9999@outlook.com"
+
+# Secret, never in this file — set it with:
+#   npx wrangler secret put GITHUB_TOKEN
+# Use a fine-grained PAT scoped to this one repo with Contents: read & write.

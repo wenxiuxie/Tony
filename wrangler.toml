@@ -1,0 +1,15 @@
+# Deploys the built site as a Workers static-assets project.
+#
+# The Cloudflare build runs `python3 build.py --dist` first, which renders
+# index.html and zh/index.html from content/*.json and assembles dist/;
+# the deploy command `npx wrangler deploy` then uploads what this points at.
+# dist/ is gitignored on purpose, so it only ever exists as build output.
+#
+# There is no `main` script: this Worker serves assets and nothing else.
+# The admin API Worker is separate, with its own config in workers/admin/,
+# and is deployed on its own — it is not part of this deployment.
+name = "tony-deng-website"
+compatibility_date = "2026-08-01"
+
+[assets]
+directory = "./dist"

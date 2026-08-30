@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Tony D — site admin</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar__left">
+    <span class="bar__mark">TONY&nbsp;D</span>
+    <span class="bar__sub">site admin</span>
+  </div>
+
+  <div class="bar__status" id="status">Loading…</div>
+
+  <div class="bar__right">
+    <input class="bar__msg" id="msg" type="text" placeholder="What changed?" aria-label="Change note">
+    <button class="btn btn--ghost" id="reloadBtn" type="button">Reload</button>
+    <button class="btn" id="saveBtn" type="button" disabled>Save draft</button>
+    <button class="btn btn--go" id="publishBtn" type="button" disabled>Publish</button>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="Sections"></nav>
+
+<main class="wrap" id="panel">
+  <p class="loading">Loading content…</p>
+</main>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="admin.js"></script>
+</body>
+</html>
